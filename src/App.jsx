@@ -1,18 +1,17 @@
-import Main from "./components/Main"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
-import "./style.css"
+import "./style.css";
 
-
-function App() {
+function App(props) {
   return (
     <>
-      <Header/>
-      <Main/>
-      <Footer/>
+      <Header dark={props.dark} />
+      <Main dark={props.dark} />
+      <Footer dark={props.dark} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

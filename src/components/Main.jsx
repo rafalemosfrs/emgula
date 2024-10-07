@@ -1,13 +1,21 @@
-import Section from "./Section"
+import Section from "./Section";
 
-function Main() {
+function Main(props) {
+  let classes;
+
+  if (props.dark) {
+    classes = "main dark";
+  } else {
+    classes = "main";
+  }
+
   return (
-    <div>
-        <Section/>Sobre
-        <Section/>Cardápio
-        <Section/>Contato
-    </div>
-  )
+    <main className={classes}>
+      <Section>Sobre</Section>
+      <Section>Cardápio</Section>
+      <Section>Contato</Section>
+    </main>
+  );
 }
 
-export default Main
+export default Main;
