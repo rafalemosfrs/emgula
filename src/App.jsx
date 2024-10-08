@@ -1,15 +1,23 @@
+import { useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
 import "./style.css";
 
-function App(props) {
+function App() {
+  const [darkValor, alterarValorDark] = useState(true);
+
+  function trocarTema(){
+    alterarValorDark(!darkValor)
+  }
+
   return (
     <>
-      <Header dark={props.dark} />
-      <Main dark={props.dark} />
-      <Footer dark={props.dark} />
+    <button onClick={trocarTema}>Trocar Tema</button>
+      <Header dark={darkValor} />
+      <Main dark={darkValor} />
+      <Footer dark={darkValor} />
     </>
   );
 }
