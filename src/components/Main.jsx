@@ -1,3 +1,4 @@
+import Product from "./Product";
 import Section from "./Section";
 
 function Main(props) {
@@ -12,7 +13,12 @@ function Main(props) {
   return (
     <main className={classes}>
       <Section>Sobre</Section>
-      <Section>Cardápio</Section>
+      <Section>
+        Cardápio
+        <Product name="Macarronada" />
+        <Product name="Lasanha" />
+        <Product name="Escondidinho" />
+      </Section>
       <Section>Contato</Section>
     </main>
   );

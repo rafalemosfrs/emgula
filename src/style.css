@@ -38,3 +38,8 @@ body {
   flex-direction: column;
   flex-grow: 1;
 }
+
+.section {
+  padding: 1rem;
+  border: solid 2px #eaeaea;
+}
