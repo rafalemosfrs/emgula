@@ -1,5 +1,5 @@
 function Section(props) {
-  return <section className="section">{props.children}</section>;
+  return <section className="m-4">{props.children}</section>;
 }
 
 export default Section;

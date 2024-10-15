@@ -1,25 +1,24 @@
-import Product from "./Product";
+import Cardapio from "./Cardapio";
 import Section from "./Section";
 
 function Main(props) {
-  let classes;
-
-  if (props.dark) {
-    classes = "main dark";
-  } else {
-    classes = "main";
-  }
-
   return (
-    <main className={classes}>
-      <Section>Sobre</Section>
+    <main className={`p-6 ${props.dark ? "bg-gray-900" : "bg-gray-100"}`}>
       <Section>
-        Cardápio
-        <Product name="Macarronada" />
-        <Product name="Lasanha" />
-        <Product name="Escondidinho" />
+        <h2 className="text-2xl font-bold mb-4">Sobre Nós</h2>
+        <p className="text-gray-600">
+          No EmGula, oferecemos pratos preparados com ingredientes frescos e um toque especial. Venha experimentar nossas especialidades!
+        </p>
       </Section>
-      <Section>Contato</Section>
+
+      <Cardapio />
+
+      <Section>
+        <h2 className="text-2xl font-bold mb-4">Contato</h2>
+        <p className="text-gray-600">
+          Para reservas, entre em contato pelo telefone (XX) XXXX-XXXX ou visite nosso site.
+        </p>
+      </Section>
     </main>
   );
 }

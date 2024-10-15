@@ -1,13 +1,13 @@
 function Footer(props) {
-  let classes;
+  const classes = `footer ${props.dark ? "bg-gray-800 text-white" : "bg-red-600 text-white"} py-4 text-center`;
 
-  if (props.dark) {
-    classes = "footer dark";
-  } else {
-    classes = "footer";
-  }
-
-  return <footer className={classes}>Criado por Ronier Lima</footer>;
+  return (
+    <footer className={classes}>
+      <p className="text-sm">
+        Criado por <span className="font-semibold">Ronier Lima</span> | &copy; {new Date().getFullYear()} Restaurante Delícias
+      </p>
+    </footer>
+  );
 }
 
 export default Footer;
