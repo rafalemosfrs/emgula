@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Product from "./Product";
-import Section from "./Section";
+import Product from "../components/Product";
+import Section from "../components/Section";
 
 function Cardapio() {
   const [produtos, alterarProdutos] = useState([]);

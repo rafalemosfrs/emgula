@@ -5,14 +5,20 @@ import Main from "./components/Main";
 import "./style.css";
 
 function App() {
-  const [dark, alterarDark] = useState(false); // Começar com tema claro
+  const [dark, alterarDark] = useState(false);
 
   function trocarTema() {
     alterarDark(!dark);
   }
 
   return (
-    <div className={dark ? "bg-gray-800 text-white" : "bg-white text-gray-800 min-h-screen transition-colors duration-300"}>
+    <div
+      className={
+        dark
+          ? "bg-gray-800 text-white"
+          : "bg-white text-gray-800 min-h-screen transition-colors duration-300"
+      }
+    >
       <button
         onClick={trocarTema}
         className="fixed top-4 right-4 bg-red-500 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-red-600 transition duration-300"
