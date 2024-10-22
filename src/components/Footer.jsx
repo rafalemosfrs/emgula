@@ -4,7 +4,7 @@ function Footer(props) {
   return (
     <footer className={classes}>
       <p className="text-sm">
-        Criado por <span className="font-semibold">Ronier Lima</span> | &copy; {new Date().getFullYear()} Restaurante Delícias
+        Criado por <span className="font-semibold">Rafael Lemos</span> | &copy; {new Date().getFullYear()} Restaurante Delícias
       </p>
     </footer>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header(props) {
   const classes = `header ${
     props.dark ? "bg-gray-800 text-white" : "bg-red-600 text-white"
@@ -10,16 +12,16 @@ function Header(props) {
       <nav>
         <ul className="flex justify-center space-x-6 cursor-pointer">
           <li className="hover:text-gray-300 transition duration-200">
-            <a href="/">Inicio</a>
+            <Link to="inicio">Início</Link>
           </li>
           <li className="hover:text-gray-300 transition duration-200">
-            <a href="sobre">Sobre</a>
+            <Link to="sobre">Sobre</Link>
           </li>
           <li className="hover:text-gray-300 transition duration-200">
-            <a href="cardapio">Cardápio</a>
+            <Link to="cardapio">Cardápio</Link>
           </li>
           <li className="hover:text-gray-300 transition duration-200">
-            <a href="contato">Contato</a>
+            <Link to="contato">Contato</Link>
           </li>
         </ul>
       </nav>
