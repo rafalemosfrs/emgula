@@ -13,7 +13,7 @@ function LoginCadastro({ dark }) {
 
   return (
     <section className={`flex items-center justify-center min-h-screen p-4 ${dark ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
-      <div className={`bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md`}>
+      <div className={`p-8 rounded-lg shadow-md w-full max-w-md ${dark ? "bg-gray-800" : "bg-white"}`}>
         <h2 className={`text-3xl font-bold mb-6 text-center ${dark ? "text-red-400" : "text-red-600"}`}>Login</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <div className="mb-4">
@@ -26,7 +26,7 @@ function LoginCadastro({ dark }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className={`w-full p-2 border rounded-md ${dark ? "border-gray-600 text-gray-200 bg-gray-700" : "border-gray-300"}`}
+              className={`w-full p-2 border rounded-md ${dark ? "border-gray-600 text-gray-200 bg-gray-700" : "border-gray-300 text-black"}`}
             />
           </div>
           <div className="mb-4">
@@ -39,7 +39,7 @@ function LoginCadastro({ dark }) {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
-              className={`w-full p-2 border rounded-md ${dark ? "border-gray-600 text-gray-200 bg-gray-700" : "border-gray-300"}`}
+              className={`w-full p-2 border rounded-md ${dark ? "border-gray-600 text-gray-200 bg-gray-700" : "border-gray-300 text-black"}`}
             />
           </div>
           <button
@@ -49,12 +49,7 @@ function LoginCadastro({ dark }) {
             Entrar
           </button>
           <div className="mt-4 text-center">
-            <p>
-              Não tem uma conta?{" "}
-              <Link to="/cadastro" className="text-red-600 hover:underline">
-                Cadastre-se
-              </Link>
-            </p>
+            <p>Não tem uma conta? <Link to="/cadastro" className="text-red-600 hover:underline">Cadastre-se</Link></p>
           </div>
         </form>
       </div>
