@@ -25,9 +25,16 @@ function App() {
       >
         {dark ? "🌞 Light Mode" : "🌙 Dark Mode"}
       </button>
-      <Header dark={dark} />
-      <Main dark={dark} />
-      <Footer dark={dark} />
+      <div className="flex flex-col min-h-screen">
+
+        <Header dark={dark} />
+
+        <main className="flex-grow">
+          <Main dark={dark} />
+        </main>
+
+        <Footer dark={dark} />
+      </div>
     </div>
   );
 }

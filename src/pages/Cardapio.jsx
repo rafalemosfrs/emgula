@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "../components/Product";
 import Section from "../components/Section";
 
-function Cardapio() {
+function Cardapio({ dark }) {
   const [produtos, alterarProdutos] = useState([]);
 
   useEffect(() => {
@@ -10,17 +10,35 @@ function Cardapio() {
   }, []);
 
   async function buscarProdutos() {
-    const resposta = await fetch("https://fakestoreapi.com/products");
+    const resposta = await fetch("https://dummyjson.com/recipes");
     const dados = await resposta.json();
-    alterarProdutos(dados);
+    alterarProdutos(dados.recipes);
   }
 
   function transformarEmJsx(produto) {
-    return <Product key={produto.id} item={produto} />;
+    return (
+      <Product
+        key={produto.id}
+        item={{
+          id: produto.id,
+          name: produto.name,
+          image: produto.image,
+          ingredients: produto.ingredients,
+          instructions: produto.instructions,
+          prepTimeMinutes: produto.prepTimeMinutes,
+          cookTimeMinutes: produto.cookTimeMinutes,
+          servings: produto.servings,
+          caloriesPerServing: produto.caloriesPerServing,
+          rating: produto.rating,
+          reviewCount: produto.reviewCount,
+        }}
+        dark={dark}
+      />
+    );
   }
 
   return (
-    <Section>
+    <Section className={dark ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-800"}> {/* Aplicando classes de fundo e texto */}
       <h2 className="text-2xl font-bold mb-4">Cardápio</h2>
       <div className="flex flex-wrap justify-center gap-4">
         {produtos.map(transformarEmJsx)}

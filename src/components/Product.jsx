@@ -1,53 +1,83 @@
 import { useState } from "react";
 
-function Product({ item }) {
-  //const item = props.item
-  //const {item} = props
-
+function Product({ item, dark }) {
   const [count, alterarCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function incrementar() {
     alterarCount(count + 1);
   }
 
   function decrementar() {
-    if (count == 0) {
+    if (count === 0) {
       return;
     }
-
     alterarCount(count - 1);
   }
 
+  function toggleModal() {
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
-    <div class="max-w-sm rounded-lg border border-gray-300 shadow-xl overflow-hidden p-4 bg-white">
+    <div className={`max-w-sm rounded-lg border ${dark ? "border-gray-600" : "border-gray-300"} shadow-xl overflow-hidden p-4 ${dark ? "bg-gray-800" : "bg-white"}`}>
       <img
         src={item.image}
-        alt={item.title}
-        class="w-full h-48 object-cover mb-4"
+        alt={item.name}
+        className="w-full h-48 object-cover mb-4"
       />
 
-      <div class="py-2">
-        <h3 class="text-xl font-semibold text-gray-800">{item.title}</h3>
-        <p class="text-gray-600 mb-2">{item.description}</p>
-        <p class="text-lg font-bold text-gray-800">{item.price}</p>
+      <div className="py-2">
+        <h3 className={`text-xl font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}>{item.name}</h3>
+        <p className={`text-lg font-bold ${dark ? "text-gray-300" : "text-gray-800"}`}>{item.caloriesPerServing} calories</p>
       </div>
 
-      <div class="flex items-center mt-4">
+      <div className="flex items-center mt-4">
         <button
           onClick={decrementar}
           disabled={count === 0}
-          class="bg-red-500 text-white font-bold py-1 px-2 rounded-l hover:bg-red-600 disabled:opacity-50"
+          className="bg-red-500 text-white font-bold py-1 px-2 rounded-l hover:bg-red-600"
         >
           -
         </button>
-        <span class="mx-2 text-lg font-semibold">{count}</span>
+        <span className="mx-2 text-lg font-semibold">{count}</span>
         <button
           onClick={incrementar}
-          class="bg-green-500 text-white font-bold py-1 px-2 rounded-r hover:bg-green-600"
+          className="bg-green-500 text-white font-bold py-1 px-2 rounded-r hover:bg-green-600"
         >
           +
         </button>
       </div>
+
+      <button
+        onClick={toggleModal}
+        className="mt-4 bg-red-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-600"
+      >
+        Mostrar Detalhes
+      </button>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className={`rounded-lg p-4 w-11/12 md:w-1/3 relative ${dark ? "bg-gray-800" : "bg-white"}`}>
+            <button
+              onClick={toggleModal}
+              className="absolute top-2 right-2 text-red-500 font-bold"
+            >
+              X
+            </button>
+            <h3 className={`text-xl font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}>{item.name}</h3>
+            <img src={item.image} alt={item.name} className="w-full h-48 object-cover my-2" />
+            <h4 className="font-semibold">Ingredientes:</h4>
+            <ul className="list-disc list-inside mb-4">
+              {item.ingredients.map((ingredient, index) => (
+                <li key={index} className={`text-gray-${dark ? "300" : "700"}`}>{ingredient}</li>
+              ))}
+            </ul>
+            <h4 className="font-semibold">Instruções:</h4>
+            <p className={`text-gray-${dark ? "300" : "700"}`}>{item.instructions.join(" ")}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
