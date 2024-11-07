@@ -1,10 +1,11 @@
 import Section from "../components/Section";
-import contact from "../assets/images/contact.svg";
+import contact from "../assets/images/contactBlue.svg";
+
 
 function Contato({ dark }) {
   return (
     <Section className={`relative ${dark ? "bg-gray-900" : "bg-gray-100"} p-8 rounded-lg shadow-lg`}>
-      <h2 className={`text-3xl font-bold mb-6 text-center ${dark ? "text-red-400" : "text-red-600"}`}>Contato</h2>
+      <h2 className={`text-3xl font-bold mb-6 text-center ${dark ? "text-[#81D8D0]" : "text-[#81D8D0]"}`}>Contato</h2>
       
       <p className={`text-${dark ? "gray-300" : "gray-700"} mb-4 text-center`}>
         Para reservas, entre em contato pelo telefone <strong>(XX) XXXX-XXXX</strong> ou preencha o formulário abaixo.
@@ -60,7 +61,7 @@ function Contato({ dark }) {
 
         <button
           type="submit"
-          className="bg-red-600 text-white font-bold py-2 px-4 rounded-md hover:bg-red-700 transition duration-300"
+          className="bg-[#81D8D0] text-black font-bold py-2 px-4 rounded-md hover:bg-[#81BEF0] transition duration-300"
         >
           Enviar
         </button>

@@ -22,6 +22,7 @@ function Main(props) {
         <Route path="/cardapio" element={<Cardapio dark={props.dark} />}></Route>
         <Route path="/login" element={<LoginCadastro dark={props.dark} />}></Route>
         <Route path="/cadastro" element={<Cadastro dark={props.dark} />}></Route>
+        
 
         <Route path="*" element={<Erro404 dark={props.dark} />}></Route>
       </Routes>

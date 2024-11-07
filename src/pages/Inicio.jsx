@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import food from "../assets/images/food.svg";
+import food from "../assets/images/foodBlue.svg";
 
 function Inicio({ dark }) {
   return (
@@ -13,7 +13,7 @@ function Inicio({ dark }) {
       </div>
 
       <div className="md:w-1/2">
-        <h1 className={`text-4xl font-bold mb-6 ${dark ? "text-red-400" : "text-[#DC2626]"} md:text-5xl`}>
+        <h1 className={`text-4xl font-bold mb-6 ${dark ? "text-[#81D8D0]" : "text-[#81D8D0]"} md:text-5xl`}>
           Bem-vindo ao Emgula!
         </h1>
 
@@ -29,7 +29,7 @@ function Inicio({ dark }) {
 
         <Link to="/contato">
           <button
-            className="bg-[#DC2626] hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-[#81D8D0] hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
           >
             Fale Conosco
           </button>

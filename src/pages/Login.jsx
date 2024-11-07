@@ -13,8 +13,8 @@ function LoginCadastro({ dark }) {
 
   return (
     <section className={`flex items-center justify-center min-h-screen p-4 ${dark ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
-      <div className={`p-8 rounded-lg shadow-md w-full max-w-md ${dark ? "bg-gray-800" : "bg-white"}`}>
-        <h2 className={`text-3xl font-bold mb-6 text-center ${dark ? "text-red-400" : "text-red-600"}`}>Login</h2>
+      <div className={`p-8 rounded-lg shadow-md w-full max-w-md ${dark ? "bg-gray-800" : "bg-[#81D8D0]"}`}>
+        <h2 className={`text-3xl font-bold mb-6 text-center ${dark ? "text-[#81D8D0]" : "text-black"}`}>Login</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <div className="mb-4">
             <label htmlFor="email" className={`block mb-2 ${dark ? "text-gray-300" : "text-gray-700"}`}>
@@ -44,12 +44,12 @@ function LoginCadastro({ dark }) {
           </div>
           <button
             type="submit"
-            className="bg-red-600 text-white font-bold py-2 rounded-md hover:bg-red-700 transition duration-300"
+            className={` ${dark ? "bg-[#81D8D0] text-black font-bold" : "bg-gray-800 text-white font-bold"} py-2 rounded-md hover:bg-[#81BEF0] transition duration-300`}
           >
             Entrar
           </button>
           <div className="mt-4 text-center">
-            <p>Não tem uma conta? <Link to="/cadastro" className="text-red-600 hover:underline">Cadastre-se</Link></p>
+            <p>Não tem uma conta? <Link to="/cadastro" className={` ${dark ? "text-white font-bold hover:underline" : "text-black font-bold hover:underline"}`}>Cadastre-se</Link></p>
           </div>
         </form>
       </div>

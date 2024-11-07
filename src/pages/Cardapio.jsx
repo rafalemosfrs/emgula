@@ -4,7 +4,8 @@ import Section from "../components/Section";
 
 function Cardapio({ dark }) {
   const [produtos, alterarProdutos] = useState([]);
-
+  const [cartItems, setCartItems] = useState([]); 
+  
   useEffect(() => {
     buscarProdutos();
   }, []);
@@ -13,6 +14,10 @@ function Cardapio({ dark }) {
     const resposta = await fetch("https://dummyjson.com/recipes");
     const dados = await resposta.json();
     alterarProdutos(dados.recipes);
+  }
+
+  function addToCart(produto) {
+    setCartItems((prevItems) => [...prevItems, produto]);
   }
 
   function transformarEmJsx(produto) {
@@ -33,16 +38,18 @@ function Cardapio({ dark }) {
           reviewCount: produto.reviewCount,
         }}
         dark={dark}
+        addToCart={() => addToCart(produto)}
       />
     );
   }
 
   return (
-    <Section className={dark ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-800"}> {/* Aplicando classes de fundo e texto */}
+    <Section className={dark ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-800"}>
       <h2 className="text-2xl font-bold mb-4">Cardápio</h2>
       <div className="flex flex-wrap justify-center gap-4">
         {produtos.map(transformarEmJsx)}
       </div>
+
     </Section>
   );
 }

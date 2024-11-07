@@ -1,5 +1,5 @@
 import Section from "../components/Section";
-import aboutImage from "../assets/images/about.svg";
+import aboutImage from "../assets/images/aboutBlue.svg";
 
 function Sobre({ dark }) {
   return (

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import notFoundImage from "../assets/images/not-found.svg";
+import notFoundImage from "../assets/images/not-foundBlue.svg";
 
 function NotFound({ dark }) {
   return (
     <div className={`flex flex-col md:flex-row items-center justify-between px-4 py-8 md:px-16 min-h-screen ${dark ? "bg-gray-900 text-white" : "bg-white text-gray-800"}`}>
       <div className="md:w-1/2 mb-8 md:mb-0">
-        <h1 className="text-4xl font-bold mb-6" style={{ color: dark ? "#FFAAAA" : "#FF0000" }}>
+        <h1 className="text-4xl font-bold mb-6" style={{ color: dark ? "#81D8D0" : "#81D8D0" }}>
           Oops! Página não encontrada.
         </h1>
 
@@ -19,8 +19,8 @@ function NotFound({ dark }) {
 
         <Link to="/inicio">
           <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105"
-            style={{ backgroundColor: "#FF0000" }}
+            className="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105"
+            style={{ backgroundColor: "#81D8D0" }}
           >
             Voltar para o Início
           </button>

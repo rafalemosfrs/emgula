@@ -1,5 +1,5 @@
 function Footer(props) {
-  const classes = `footer ${props.dark ? "bg-gray-800 text-white" : "bg-red-600 text-white"} py-4 text-center`;
+  const classes = `footer ${props.dark ? "bg-gray-800 text-white" : "bg-[#81D8D0] text-black"} py-4 text-center`;
 
   return (
     <footer className={classes}>
